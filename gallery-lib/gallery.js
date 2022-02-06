@@ -9,7 +9,7 @@ class Gallery {
     this.size = element.childElementCount;
     this.currentSlide = 0;
 
-    this.manageHTML - this.manageHTML.bind(this);
+    this.manageHTML =  this.manageHTML.bind(this);
     this.manageHTML()
   }
 
@@ -20,12 +20,22 @@ class Gallery {
         ${this.containerNode.innerHTML}
       </div>
      `;
-     this.lineNode= this.containerNode.querySelector('.${GalleryLineClassName}');
+     this.lineNode= this.containerNode.querySelector(`.${GalleryLineClassName}`);
      this.slidesNodes = Array.from(this.lineNode.children).map((childNode) => 
       wrapElementByDiv({
         element: childNode,
         className: GallerySlideClassName
         })
       );
+      console.log(this.slidesNodes)
   }
+}
+
+function wrapElementByDiv({element, className}) {
+  const wrapperNode = document.createElement('div');
+  wrapperNode.classList.add(className);
+  element.parentNode.insertBefore(wrapperNode, element);
+  wrapperNode.appendChild(element);
+
+  return wrapperNode;
 }
