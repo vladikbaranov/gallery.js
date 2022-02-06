@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.slide{
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-1{
+  background-color: #8a05ac;
+}
+
+.slide-2{
+  background-color: #76f771;
+}
+
+.slide-3{
+  background-color: #fa0c0c;
+}
+
+.slide-4{
+  background-color: #12e4e4;
+}
